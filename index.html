@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Topsy.eg</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     body {
       font-family: Arial, sans-serif;
-      direction: rtl;
       text-align: center;
       height: 100vh;
       display: flex;
@@ -50,8 +49,8 @@
       font-weight: bold;
       display: inline-flex;
       align-items: center;
-      gap: 12px;
-      padding: 14px 28px;
+      gap: 10px;
+      padding: 12px 24px;
       border-radius: 50px;
       color: white;
       position: relative;
@@ -59,33 +58,40 @@
     }
 
     a i {
-      font-size: 22px;
+      font-size: 18px;
     }
 
-    /* ألوان كل زرار */
+    /* ضبط حجم أيقونة TikTok */
+    .tiktok i {
+      font-size: 22px; /* زيادة الحجم لتطابق الأيقونات الأخرى */
+    }
+
+    /* Colors */
     .facebook { background: #1877f2; }
     .instagram { background: #e4405f; }
     .tiktok { background: #000; }
+    .whatsapp { background: #25d366; }
 
-    /* Shadow و Edge عند الوقوف */
+    /* Hover Effects */
     a:hover {
       box-shadow: 0 8px 20px rgba(0,0,0,0.4);
       border: 2px solid white;
       transform: translateY(-3px) scale(1.05);
     }
 
-    /* Tooltip (البوب أب) */
+    /* Tooltip */
     a::after {
       content: attr(data-tooltip);
       position: absolute;
       bottom: 110%;
+      left: 50%;
+      transform: translateX(-50%);
       background: rgba(0,0,0,0.8);
       color: white;
       font-size: 14px;
       padding: 6px 12px;
       border-radius: 6px;
       opacity: 0;
-      transform: translateY(10px);
       transition: all 0.3s ease;
       pointer-events: none;
       white-space: nowrap;
@@ -93,16 +99,17 @@
 
     a:hover::after {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateX(-50%);
     }
   </style>
 </head>
 <body>
   <h2>Topsy.eg</h2>
   <ul>
-    <li><a class="facebook" href="https://www.facebook.com/share/19iJYmrj5t/" data-tooltip="زور صفحتنا على فيسبوك"><i class="fab fa-facebook"></i>فيسبوك</a></li>
-    <li><a class="instagram" href="https://www.instagram.com/topsy.eg?igsh=MXZ1c3RkOWh" data-tooltip="شوف صورنا على إنستجرام"><i class="fab fa-instagram"></i>إنستجرام</a></li>
-    <li><a class="tiktok" href="https://www.tiktok.com/@topsy.eg?_t=ZS-8yMfakqaPNo&_r=1" data-tooltip="تابع فيديوهاتنا على تيك توك"><i class="fab fa-tiktok"></i>تيك توك</a></li>
+    <li><a class="facebook" href="https://www.facebook.com/share/19iJYmrj5t/" data-tooltip="Visit our Facebook page" aria-label="Visit our Facebook page"><i class="fab fa-facebook"></i>Facebook</a></li>
+    <li><a class="instagram" href="https://www.instagram.com/topsy.eg/" data-tooltip="Check our Instagram" aria-label="Check our Instagram"><i class="fab fa-instagram"></i>Instagram</a></li>
+    <li><a class="tiktok" href="https://www.tiktok.com/@topsy.eg?_t=ZS-8yMfakqaPNo&_r=1" data-tooltip="Watch us on TikTok" aria-label="Watch us on TikTok"><i class="fab fa-tiktok"></i>TikTok</a></li>
+    <li><a class="whatsapp" href="https://chat.whatsapp.com/LpEsy6RenXm3nb1uhS0Oxg?mode=ac_t" data-tooltip="Join our WhatsApp group" aria-label="Join our WhatsApp group"><i class="fab fa-whatsapp"></i>WhatsApp</a></li>
   </ul>
 </body>
 </html>
